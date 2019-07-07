@@ -2,6 +2,6 @@
 .gradle/
 .idea/
 gradle/
-
+out/
 # Ignore Gradle build output directory
 build
