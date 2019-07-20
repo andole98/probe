@@ -5,8 +5,12 @@
  * For more details take a look at the Java Quickstart chapter in the Gradle
  * User Manual available at https://docs.gradle.org/5.5/userguide/tutorial_java_projects.html
  */
+plugins {
+    id "java"
+}
 
-apply plugin: 'java'
+sourceCompatibility=1.8
+targetCompatibility=1.8
 
 repositories {
     // Use jcenter for resolving dependencies.
@@ -22,3 +26,13 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+task copy(type: Copy, group: "Custom", description: "copy") {
+    from "src"
+    into "dest"
+}
+ 
+task zip(type: Zip, group: "Archive", description: "archive"){
+    from "src"
+    setArchivesBaseName "basic-demo-1"
+}
+

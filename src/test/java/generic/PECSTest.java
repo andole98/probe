@@ -58,13 +58,14 @@ class PECSTest {
     @Test
     void 논_제네릭() {
         List a = new ArrayList();
-        a.add(new A());
-        a.add(new B());
-        a.add(new C());
-        for (Object o : a) {
-            C a1 = (C) o; // cast exception ==  type - unsafety
-            System.out.println(a1.a());
-        }
+//        a.add(new A());
+//        a.add(new B());
+//        a.add(new C());
+//        for (Object o : a) {
+//            C a1 = (C) o; // cast exception ==  type - unsafety
+//            System.out.println(a1.a());
+//        }
+        B b = new C();
     }
 
     @Test
@@ -88,10 +89,11 @@ class PECSTest {
 
     @Test
     void 파라미터_아닌_와일드카드_extends() {
-        List<? extends B> be = new ArrayList<>();
-//        be.add(new A());
-//        be.add(new B());
-//        be.add(new C());
+        List<? extends B> list = new ArrayList<>();
+//        list.add(new A());
+//        list.add(new B());
+//        list.add(new C());
+        list.add(null);
     }
 
     @Test
@@ -120,6 +122,10 @@ class PECSTest {
 //        Thing<C> thingC = new Thing<>(new B());
         Thing<?> thingW = new Thing<>(new B());
         Thing<?> thingW2 = new Thing<>(new C());
+
+        List<Thing> things = new ArrayList<>();
+        things.add(new Thing<>(new B()));
+        things.add(new Thing<>(new C()));
 
         assertEquals("C", thingB.thing().text());
     }
