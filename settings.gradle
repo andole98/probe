@@ -1,1 +1,3 @@
 rootProject.name = 'probe'
+include 'elasticsearch-repository'
+
