@@ -39,6 +39,8 @@ subprojects {
         developmentOnly 'org.springframework.boot:spring-boot-devtools'
 
         implementation 'org.springframework.boot:spring-boot-starter'
+        implementation 'com.github.javafaker:javafaker:1.0.2'
+
         testImplementation 'org.springframework.boot:spring-boot-starter-test'
         testImplementation 'org.testcontainers:junit-jupiter:1.15.0'
     }
