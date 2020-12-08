@@ -1,3 +1,6 @@
 rootProject.name = 'probe'
 include 'elasticsearch-repository'
+include 'jpa-batch'
+include 'data-jdbc'
+include 'junit5'
 
